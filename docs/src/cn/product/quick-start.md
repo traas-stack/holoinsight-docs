@@ -1,26 +1,26 @@
 # 页面布局
 左侧是抽屉式菜单栏，中间是页面主要内容，右上角是搜索栏。
 
-![首页](docs/src/resources/images/quickstart/index-cn.png)
+![首页](/docs/src/resources/images/quickstart/index-cn.png)
 
 
 # 基础设施监控
 基础设施展示了基础资源（vm、pod、node）的系统指标以及元数据。  
 基础资源的 vm 和 pod 如果具备 "app" 属性，则它会被用于创建应用元数据。  
 
-![基础设施监控](docs/src/resources/images/quickstart/infrastucture-monitoring-cn.png)
+![基础设施监控](/docs/src/resources/images/quickstart/infrastucture-monitoring-cn.png)
 
 
 # 启动 JVM 组件
 为 holoinsight-server-example 启动 JVM 指标采集功能。
-![集成插件](docs/src/resources/images/quickstart/integration-jvm-cn.png)
+![集成插件](/docs/src/resources/images/quickstart/integration-jvm-cn.png)
 
 
 # 应用监控
 应用监控展示了应用维度的监控数据，现在内容主要包含系统指控和JVM指标。
-![应用监控](docs/src/resources/images/quickstart/application-monitoring-cn.png)
-![应用监控-单机](docs/src/resources/images/quickstart/application-monitoring-server-cn.png)
-![应用监控-jvm](docs/src/resources/images/quickstart/application-monitoring-jvm-cn.png)
+![应用监控](/docs/src/resources/images/quickstart/application-monitoring-cn.png)
+![应用监控-单机](/docs/src/resources/images/quickstart/application-monitoring-server-cn.png)
+![应用监控-jvm](/docs/src/resources/images/quickstart/application-monitoring-jvm-cn.png)
 
 
 # 日志监控
@@ -48,10 +48,11 @@
   d. 保存
 5. 保存
 
-![日志监控-目录](docs/src/resources/images/quickstart/log-monitoring-cn.png)
-![日志监控-配置1](docs/src/resources/images/quickstart/log-monitoring-config-1-cn.png)
-![日志监控-配置2](docs/src/resources/images/quickstart/log-monitoring-config-2-cn.png)
-![日志监控-预览](docs/src/resources/images/quickstart/log-monitoring-view-cn.png)
+![日志监控-目录](/docs/src/resources/images/quickstart/log-monitoring-cn.png)
+![日志监控-配置1](/docs/src/resources/images/quickstart/log-monitoring-config-1-cn.png)
+![日志监控-配置2](/docs/src/resources/images/quickstart/log-monitoring-config-2-cn.png)
+![日志监控-预览](/docs/src/resources/images/quickstart/log-monitoring-view-cn.png)
+
 这里展示了最细粒度的数据. 需要到大盘上才能实现聚合功能.
 
 
@@ -67,8 +68,8 @@
 8. 退出编辑并保存
 9. 重新进入大盘
 
-![大盘-列表](docs/src/resources/images/quickstart/dashboard-cn.png) 
-![大盘-配置](docs/src/resources/images/quickstart/dashboard-config-1-cn.png) 
-![大盘-查看](docs/src/resources/images/quickstart/dashboard-view-cn.png) 
+![大盘-列表](/docs/src/resources/images/quickstart/dashboard-cn.png) 
+![大盘-配置](/docs/src/resources/images/quickstart/dashboard-config-1-cn.png) 
+![大盘-查看](/docs/src/resources/images/quickstart/dashboard-view-cn.png) 
 
 

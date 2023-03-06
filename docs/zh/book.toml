@@ -1,0 +1,8 @@
+[book]
+title = "HoloInsight 文档"
+authors = ["xzchaoo"]
+language = "zh"
+src = "src"
+
+[build]
+create-missing = false

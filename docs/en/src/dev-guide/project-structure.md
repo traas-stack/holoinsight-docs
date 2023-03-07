@@ -1,0 +1,32 @@
+# Project structure
+
+- deploy/
+  - examples/
+    - docker-compose/ -> docker-compose based deployment example
+    - k8s/ -> k8s based deployment example
+- scripts/
+  - all-in-one/ -> 'all-in-one' related scripts
+  - api/ -> Debug Api scripts
+  - docker/ -> Build docker image 
+  - add-license.sh -> Add license header to Java source codes
+  - check-format.sh -> Check if Java source codes are well formatted
+  - check-license.sh -> Check if Java source codes has license header
+  - format.sh -> Format Java codes
+- server/
+  - all-in-one/ -> This 'all-in-one' module references all other modules, so that all modules can be run by a Java program
+  - apm/
+  - common/ -> including some tools/auxiliary classes
+  - extension/
+  - gateway/ -> Data entrance gateway module
+  - holoinsight-dependencies/ -> A maven module for dependencies management
+  - home/ -> Home module provides webapis which front-end uses
+  - meta/ -> Meta module manages meta of k8s nodes/pods
+  - query/ -> Query module provides grpc api for other modules to query monitoring data 
+  - registry/ -> Registry module maintains connections between Agents, delivers 'monitoring data collection task' to Agents.
+  - server-parent/ -> A maven parent for other modules
+- .pre-commit-config.yaml -> pre-commit config
+- Formatter.xml -> Google Code Style
+- HEADER -> License Header
+- LICENSE -> License
+- README.md
+- README-CN.md

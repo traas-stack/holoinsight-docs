@@ -11,8 +11,8 @@
 
 # 开发指南
 - [构建]()
-  - [构建二进制]()
-  - [构建 Docker 镜像]()
+  - [编译](dev-guide/build/compile.md)
+  - [构建 Docker 镜像](dev-guide/build/build-docker-image.md)
 - [运行]()
 - [日志]()
 

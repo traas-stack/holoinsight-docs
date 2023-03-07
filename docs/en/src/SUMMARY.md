@@ -3,7 +3,7 @@
 
 # Introduction
 - [What is HoloInsight](introduction/what-is-holoinsight.md)
-- [Quick Start]()
+- [Quick Start](introduction/quick-start.md)
 
 
 # User Guide
@@ -17,12 +17,18 @@
 - [Alert]()
 
 # Dev Guide
-- [Building]()
-  - [Compile]()
-  - [Build docker image]()
-- [Running]()
-- [Logging]()
-
+- [Project structure](dev-guide/project-structure.md)
+- [Dev requirements](dev-guide/dev-requirements.md)
+- [Build]()
+  - [Compile](dev-guide/build/compile.md)
+  - [Build docker image](dev-guide/build/build-docker-image.md)
+  - [Docker image details](dev-guide/build/docker-image-details.md)
+- [Run](dev-guide/run/README.md)
+  - [Bootstrap configuration](dev-guide/run/bootstrap-configuration.md)
+  - [Dynamic configuration](dev-guide/run/dynamic-configuration.md)
+- [Test](dev-guide/test/README.md)
+- [Log](dev-guide/log/README.md)
+- [Internals]()
 
 # Operations
 - [Deployment]()
@@ -34,4 +40,5 @@
 
 
 # Technical and Design
-
+- [Server architecture]()
+- [Deployment architecture]()

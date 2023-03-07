@@ -1,35 +1,35 @@
 # README
 
-# Install mdBook
+# Install mdBook & mdBook-i18n
 
-Download mdBook from its [release page](https://github.com/rust-lang/mdBook/releases) and put it on your `$PATH`.
+You should install `Rust lang` first.
 
-Verify mdBook:
+Check [this doc](https://www.rust-lang.org/learn/get-started).
+
+Then install mdBook & mdBook-i18n using `cargo`:
+
 ```bash
-mdbook --version
+./scripts/install.sh
 ```
 
-output:
-```text
-mdbook v0.4.26
-```
-
-Read [mdBook Documentation](https://rust-lang.github.io/mdBook/format/summary.html)
+Read [mdBook Documentation](https://rust-lang.github.io/mdBook/format/summary.html) for more details.
 
 # Write documentations
 
 Directory structure:
 ```text
 docs/
-  en/ English translation
-    src/
+  book/ -> Build book result, ignored by git
+  src/
+    en/ -> English translation
       introduction/
-        introduction.md A documentation 
-      SUMMARY.md A markdown which generates the sidebar menu. Check the detail here https://rust-lang.github.io/mdBook/format/summary.html
-  zh/ Chinese translation, has same directory structure as en/
+        introduction.md -> A markdown
+      SUMMARY.md -> A markdown which generates the sidebar menu. Check the detail here https://rust-lang.github.io/mdBook/format/summary.html
+    cn/ -> Chinese translation. It has same directory structure as 'en/'.
+    resources/ -> Static resources
 ```
 
-The 'mdbook serve' command is used to preview a book by serving it via HTTP at `localhost:3000` by default:
+The './scripts/serve.sh' command is used to preview a book by serving it via HTTP at `localhost:3000` by default:
 ```bash
-mdbook serve ./docs/en
+./scripts/serve.sh
 ```

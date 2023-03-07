@@ -1,0 +1,29 @@
+[book]
+title = "HoloInsight Documentation"
+authors = ["HoloInsight Authors"]
+src = "src/en"
+language = "en"
+multilingual = true
+
+[build]
+use-default-preprocessors = false
+
+
+[preprocessor.links]
+
+[[output.i18n.translations]]
+src = "src/cn"
+language = "cn"
+translators = ["HoloInsight Authors"]
+title = "HoloInsight 文档"
+
+[output.random]
+command = "/bin/bash ../../move.sh"
+
+[output.html]
+site-url = "/holoinsight-docs/"
+additional-css = ["style.css"]
+additional-js = ["sidebar.js"]
+
+[output.html.fold]
+enable = true

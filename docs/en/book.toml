@@ -1,8 +1,0 @@
-[book]
-title = "HoloInsight Documentations"
-authors = ["xzchaoo"]
-language = "en"
-src = "src"
-
-[build]
-create-missing = false

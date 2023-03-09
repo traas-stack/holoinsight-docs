@@ -3,7 +3,7 @@
 
 # 介绍
 - [什么是 HoloInsight](introduction/what-is-holoinsight.md)
-- [快速开始]()
+- [快速入门](introduction/quick-start.md)
 
 
 # 用户指南

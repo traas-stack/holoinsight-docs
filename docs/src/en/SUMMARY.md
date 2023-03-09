@@ -19,6 +19,7 @@
 # Dev Guide
 - [Project structure](dev-guide/project-structure.md)
 - [Dev requirements](dev-guide/dev-requirements.md)
+  - [Conventional Commit](dev-guide/conventional_commit.md)
 - [Build]()
   - [Compile](dev-guide/build/compile.md)
   - [Build docker image](dev-guide/build/build-docker-image.md)

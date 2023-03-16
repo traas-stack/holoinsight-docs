@@ -26,9 +26,6 @@ git clone https://github.com/traas-stack/holoinsight.git --depth 1
 2. 运行部署脚本
 ```bash
 sh ./deploy/examples/docker-compose/up.sh
- 
-# 中国的用户可以使用如下的脚本获得更好的网络访问
-# sh ./deploy/examples/docker-compose/up.sh cn
 ``` 
 这个脚本会同时部署一个 holoinsight-agent 到 holoinsight-server 容器中，这种用法仅仅用于演示，不适用于生产环境。
 
@@ -50,9 +47,6 @@ git clone https://github.com/traas-stack/holoinsight.git --depth 1
 2. 部署 k8s 资源
 ```bash
 sh ./deploy/examples/k8s/overlays/example/apply.sh
-
-# 中国的用户可以使用如下的脚本获得更好的网络访问。
-# sh ./deploy/examples/k8s/overlays/example-cn/apply.sh 
 ```
 > Notice: 你的 k8s 用户必须有权限创建 ClusterRole。
 
@@ -67,14 +61,7 @@ sh ./deploy/examples/k8s/overlays/example/apply.sh
 
 # 附录
 #### 安装 docker-compose
-快速安装 docker-compose V2:
+快速安装 docker-compose V1.29.2:
 ```bash
-sudo curl -SL https://github.com/docker/compose/releases/download/v2.15.1/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose && sudo chmod a+x /usr/local/bin/docker-compose
-```
-
-中国的用户可以使用如下的脚本获得更好的网络访问。
-```bash
-docker run --name holoinsight-tools -d registry.cn-hangzhou.aliyuncs.com/holoinsight-examples/tools:latest && \
-  docker cp holoinsight-tools:/docker-compose . && \
-  docker rm -f holoinsight-tools
+sudo curl -SL https://github.com/docker/compose/releases/download/1.29.2/docker-compose-Linux-x86_64 -o /usr/local/bin/docker-compose && sudo chmod a+x /usr/local/bin/docker-compose
 ```

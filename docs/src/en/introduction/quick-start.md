@@ -27,9 +27,6 @@ git clone https://github.com/traas-stack/holoinsight.git --depth 1
 2. run deploy script
 ```bash
 sh ./deploy/examples/docker-compose/up.sh
- 
-# Users in China can use the following script for better network access.
-# sh ./deploy/examples/docker-compose/up.sh cn
 ``` 
 This script will also install an agent inside holoinsight-server container. This usage is only for demonstration and is not applicable to production environment.
 
@@ -51,13 +48,10 @@ git clone https://github.com/traas-stack/holoinsight.git --depth 1
 2. deploy k8s resources
 ```bash
 sh ./deploy/examples/k8s/overlays/example/apply.sh
-
-# Users in China can use the following script for better network access.
-# sh ./deploy/examples/k8s/overlays/example-cn/apply.sh 
 ```
-> Notice: Your k8s user must has the permission to create ClusterRole.
+> Notice: Your k8s user must have the permission to create ClusterRole.
 
-Use following script to uninstall holoinsight from k8s cluster.
+Use following script to uninstall HoloInsight from k8s cluster.
 ```bash
 # sh ./deploy/examples/k8s/overlays/example/delete.sh
 ```
@@ -68,14 +62,7 @@ Use following script to uninstall holoinsight from k8s cluster.
 
 # Appendix
 #### Install docker-compose
-quick install docker-compose V2:
+quick install docker-compose V1.29.2:
 ```bash
-sudo curl -SL https://github.com/docker/compose/releases/download/v2.15.1/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose && sudo chmod a+x /usr/local/bin/docker-compose
-```
-
-Users in China can use the following script for better network access.
-```bash
-docker run --name holoinsight-tools -d registry.cn-hangzhou.aliyuncs.com/holoinsight-examples/tools:latest && \
-  docker cp holoinsight-tools:/docker-compose . && \
-  docker rm -f holoinsight-tools
+sudo curl -SL https://github.com/docker/compose/releases/download/1.29.2/docker-compose-Linux-x86_64 -o /usr/local/bin/docker-compose2 && sudo chmod a+x /usr/local/bin/docker-compose
 ```

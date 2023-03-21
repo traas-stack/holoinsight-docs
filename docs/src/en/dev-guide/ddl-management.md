@@ -1,2 +1,0 @@
-# DDL management
-TODO

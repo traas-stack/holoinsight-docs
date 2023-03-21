@@ -1,4 +1,4 @@
-# Project structure
+# Server project structure
 
 - deploy/
   - examples/
@@ -12,6 +12,9 @@
   - check-format.sh -> Check if Java source codes are well formatted
   - check-license.sh -> Check if Java source codes has license header
   - format.sh -> Format Java codes
+  - test/
+    - e2e/
+      - all.sh -> Run all E2E tests
 - server/
   - all-in-one/ -> This 'all-in-one' module references all other modules, so that all modules can be run by a Java program
   - apm/
@@ -24,6 +27,12 @@
   - query/ -> Query module provides grpc api for other modules to query monitoring data 
   - registry/ -> Registry module maintains connections between Agents, delivers 'monitoring data collection task' to Agents.
   - server-parent/ -> A maven parent for other modules
+- test/
+  - scenes/ test scenes directory
+    - scene-default/ a test scene named `scene-default`
+      - docker-compose.yaml
+      - up.sh -> deploy this scene using docker-compose
+      - down.sh -> tear down this scene
 - .pre-commit-config.yaml -> pre-commit config
 - Formatter.xml -> Google Code Style
 - HEADER -> License Header

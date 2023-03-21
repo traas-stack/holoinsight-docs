@@ -1,4 +1,4 @@
-# Bootstrap configuration
+# Server bootstrap configuration
 The server is a Spring Boot app. It manages bootstrap parameters using `config/application.yaml`.
 > Check [Externalized Configuration](https://docs.spring.io/spring-boot/docs/2.7.9/reference/html/features.html#features.external-config) in Spring Boot document.  
 > You can use all the methods mentioned in the Spring Boot document to modify the configuration.

@@ -1,4 +1,4 @@
-# Log
+# Server logs
 The server is a Spring Boot app. So it use `slf4j` as log facade and `log4j2` as log impl.
 
 Here are some important log.
@@ -13,4 +13,4 @@ Here are some important log.
 
 ## target.log
 
-# Log rotations
+# Agent logs

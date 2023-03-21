@@ -35,9 +35,9 @@ sh ./deploy/examples/docker-compose/up.sh
 
 # 使用 k8s 部署
 先决条件:
-1. 有 k8 集群
+1. 有 k8s 集群
 2. 有 Linux 或 Mac 环境
-   <br/>
+
 
 1. 克隆仓库
 ```bash

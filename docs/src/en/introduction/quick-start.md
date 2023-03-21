@@ -36,7 +36,7 @@ This script will also install an agent inside holoinsight-server container. This
 
 # Deploy using k8s
 Requirements:
-1. k8 cluster
+1. k8s cluster
 2. Linux or Mac environment
 
 

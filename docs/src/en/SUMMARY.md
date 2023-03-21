@@ -27,6 +27,7 @@
 - [Run](dev-guide/run/README.md)
   - [Bootstrap configuration](dev-guide/run/bootstrap-configuration.md)
   - [Dynamic configuration](dev-guide/run/dynamic-configuration.md)
+  - [Agent bootstrap configuration](dev-guide/run/agent-bootstrap-configuration.md)
 - [Test](dev-guide/test/README.md)
 - [Log](dev-guide/log/README.md)
 - [Internals]()

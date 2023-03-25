@@ -32,6 +32,7 @@
 - [Test](dev-guide/test/README.md)
 - [Log](dev-guide/log/README.md)
 - [Internals]()
+  - [Log multiline](dev-guide/internals/log-multiline.md)
 
 # Operations
 - [Deployment]()

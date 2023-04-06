@@ -14,7 +14,7 @@ Build requirements:
 build result:
 - holoinsight/server-base:$tag
 
-> The image will only be loaded into local Docker.
+> The image will be pushed to Docker Hub.
 
 ## Build server docker image for current arch
 
@@ -25,7 +25,7 @@ build result:
 build result:
 - holoinsight/server:latest
 
-> The image will be pushed to Docker Hub.
+> The image will only be loaded into local Docker.
 
 ## Build server docker image for multi arch
 
@@ -35,6 +35,8 @@ build result:
 
 build result:
 - holoinsight/server:latest
+
+> The image will be pushed to Docker Hub.
 
 
 # Build agent docker image
@@ -78,7 +80,7 @@ GOPROXY="https://goproxy.cn,direct" ./scripts/docker/build.sh
 build result:
 - holoinsight/agent:latest (contains only current arch)
 
-> The build result will be loaded into Docker.
+> The image will only be loaded into local Docker.
 
 ## Build multi arch docker image
 ```bash
@@ -91,4 +93,8 @@ GOPROXY="https://goproxy.cn,direct" ./scripts/docker/buildx.sh
 build result:
 - holoinsight/agent:latest (contains linux/amd64 and linux/arm64/v8 platforms)
 
-> The build result will upload to Docker Hub.
+> The image will be pushed to Docker Hub.
+
+# Notice
+Some build scripts require the permission to push images to Docker Hub.  
+These scripts can only be executed by core developers of HoloInsight.

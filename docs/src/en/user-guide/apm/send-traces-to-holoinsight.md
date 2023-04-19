@@ -1,5 +1,5 @@
 # Send Traces to HoloInsight
-> Before this you need to [deploy the HoloInsight collector](deploy-holoinsight-collector.md).
+> Before this you need to [deploy the HoloInsight collector](../../operations/deployment/deploy-holoinsight-collector.md).
 
 Report the trace data to the HoloInsight collector for processing and export to the HoloInsight server, and then you can view the distributed trace links, service topology, and aggregated statistical indicators on the HoloInsight dashboard.
 

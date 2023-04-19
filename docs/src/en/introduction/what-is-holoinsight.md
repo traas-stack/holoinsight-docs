@@ -9,4 +9,5 @@ HoloInsight is a cloud-native observability platform with a special focus on rea
 HoloInsight repositories:
 * <a href="https://github.com/traas-stack/holoinsight" target="_blank">HoloInsight</a>
 * <a href="https://github.com/traas-stack/holoinsight-agent" target="_blank">HoloInsight Agent</a>
+* <a href="https://github.com/traas-stack/holoinsight-collector" target="_blank">HoloInsight Collector</a>
 * <a href="https://github.com/traas-stack/holoinsight-docs" target="_blank">HoloInsight Docs</a>

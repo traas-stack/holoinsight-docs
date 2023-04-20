@@ -41,7 +41,8 @@ It contains the following biz fields:
 
 
 ## agent/stat.log
-This log file contains the 'stat' event of log monitor task.
+This log file contains the 'stat' event of log monitor task.  
+These logs will be printed at the first second of every minute.
 
 Example:
 ```text

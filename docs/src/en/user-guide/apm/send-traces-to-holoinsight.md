@@ -16,7 +16,7 @@ The HoloInsight collector receives trace data based on the [OpenTelemetry](https
 ### If your application is deployed in a container
 - You can build your image based on the officially recommended [image](https://hub.docker.com/r/apache/skywalking-java-agent) carrying SkyWalking Agent.
 ```
-FROM apache/skywalking-java-agent:8.5.0-jdk8
+FROM apache/skywalking-java-agent:8.15.0-java8
 
 ENV SW_AGENT_NAME ${YOUR_APPLICATION_NAME}
 ENV SW_AGENT_AUTHENTICATION ${YOUR_HOLOINSIGHT_API_KEY}

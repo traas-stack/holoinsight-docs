@@ -14,38 +14,50 @@ The HoloInsight collector receives trace data based on the [OpenTelemetry](https
 
 ## Using SkyWalking Agent
 ### If your application is deployed in a container
-1. Edit the Dockerfile to download [SkyWalking Agent](https://skywalking.apache.org/downloads/#Agents) and configure
+- You can build your image based on the officially recommended [image](https://hub.docker.com/r/apache/skywalking-java-agent) carrying SkyWalking Agent.
 ```
-# Download and unzip the SkyWalking Agent
-RUN wget https://archive.apache.org/dist/skywalking/java-agent/8.11.0/apache-skywalking-java-agent-8.11.0.tgz
-RUN tar zxvf apache-skywalking-java-agent-8.11.0.tgz
+FROM apache/skywalking-java-agent:8.5.0-jdk8
 
-# Configure environment variables
 ENV SW_AGENT_NAME ${YOUR_APPLICATION_NAME}
-ENV SW_AGENT_AUTHENTICATION ${YOUR_API_KEY}
+ENV SW_AGENT_AUTHENTICATION ${YOUR_HOLOINSIGHT_API_KEY}
 ENV SW_AGENT_COLLECTOR_BACKEND_SERVICES ${YOUR_HOLOINSIGHT_COLLECTOR_ADDRESS}
+
+# ... build your java application
+
+# You can start your Java application with `CMD` or `ENTRYPOINT`, 
+# but you don't need to care about the Java options to enable SkyWalking agent, 
+# it should be adopted automatically.
 ```
 
-2. Enable SkyWalking Agent in the startup command
+- Or you can manually download SkyWalking Agent and attach it to your application startup command in the Dockerfile.
 ```
-java -javaagent:PATH/TO/YOUR/SKYWALKING-AGENT/skywalking-agent/agent/skywalking-agent.jar
+RUN wget https://archive.apache.org/dist/skywalking/java-agent/8.15.0/apache-skywalking-java-agent-8.15.0.tgz
+RUN tar zxvf apache-skywalking-java-agent-8.15.0.tgz
+
+ENV SW_AGENT_NAME ${YOUR_APPLICATION_NAME}
+ENV SW_AGENT_AUTHENTICATION ${YOUR_HOLOINSIGHT_API_KEY}
+ENV SW_AGENT_COLLECTOR_BACKEND_SERVICES ${YOUR_HOLOINSIGHT_COLLECTOR_ADDRESS}
+
+... build your java application
+
+CMD ["java", "-javaagent:PATH/TO/YOUR/SKYWALKING-AGENT/skywalking-agent/agent/skywalking-agent.jar", ${YOUR_APPLICATION_STARTUP_PARAMS}]
 ```
 
 ### If your application is deployed on a host
 1. Download and unzip the [SkyWalking Agent](https://skywalking.apache.org/downloads/#Agents)
 ```
-wget https://archive.apache.org/dist/skywalking/java-agent/8.11.0/apache-skywalking-java-agent-8.11.0.tgz
-tar zxvf apache-skywalking-java-agent-8.11.0.tgz
+wget https://archive.apache.org/dist/skywalking/java-agent/8.15.0/apache-skywalking-java-agent-8.15.0.tgz
+tar zxvf apache-skywalking-java-agent-8.15.0.tgz
 ```
 
-2. Edit the configuration file of SkyWalking Agent
+2. Edit the `skywalking-agent/config/agent.config`
 ```
 agent.service_name=${YOUR_APPLICATION_NAME}
-agent.authentication=${YOUR_API_KEY}
+agent.authentication=${YOUR_HOLOINSIGHT_API_KEY}
 collector.backend_service=${YOUR_HOLOINSIGHT_COLLECTOR_ADDRESS}
 ```
 
 3. Enable SkyWalking Agent in the startup command
 ```
-java -javaagent:PATH/TO/YOUR/SKYWALKING-AGENT/skywalking-agent/agent/skywalking-agent.jar
+java -javaagent:PATH/TO/YOUR/SKYWALKING-AGENT/skywalking-agent/agent/skywalking-agent.jar ${YOUR_APPLICATION_STARTUP_PARAMS}
 ```

@@ -29,7 +29,7 @@ ENV SW_AGENT_COLLECTOR_BACKEND_SERVICES ${YOUR_HOLOINSIGHT_COLLECTOR_ADDRESS}
 # it should be adopted automatically.
 ```
 
-- Or you can manually download SkyWalking Agent and attach it to your application startup command in the Dockerfile.
+- Or you can manually download the [SkyWalking Agent](https://skywalking.apache.org/downloads/#Agents) and attach it to your application startup command in the Dockerfile.
 ```
 RUN wget https://archive.apache.org/dist/skywalking/java-agent/8.15.0/apache-skywalking-java-agent-8.15.0.tgz
 RUN tar zxvf apache-skywalking-java-agent-8.15.0.tgz

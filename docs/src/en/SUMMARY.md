@@ -35,6 +35,7 @@
   - [Server dynamic configuration](dev-guide/run/server-dynamic-configuration.md)
   - [Agent bootstrap configuration](dev-guide/run/agent-bootstrap-configuration.md)
 - [Test](dev-guide/test/README.md)
+  - [Test scenes](dev-guide/test/test-scenes.md)
 - [Log](dev-guide/log/README.md)
 - [Internals]()
   - [Log multiline](dev-guide/internals/log-multiline.md)

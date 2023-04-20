@@ -12,7 +12,7 @@ build=1 ./scripts/test/e2e/all.sh
 ## Deployment for testing
 > This method is for quick local verification and is not suitable for production-level deployment. 
 
-Now there is a test scene named `scene-default`. More test scenes will be added in the future.
+Now there is a test scene named [scene-default](test-scenes.md#scene-default). [More test scenes](test-scenes.md) will be added in the future.
 Every scene has a `docker-compose.yaml` and some other resource files.
 
 You can manually deploy a test scene using the following scripts:
@@ -26,3 +26,5 @@ build=1 ./test/scenes/${scene_name}/up.sh
 # Tear down HoloInsight
 ./test/scenes/${scene_name}/down.sh
 ```
+
+Currently, running this test scene consumes about 5GB of memory.

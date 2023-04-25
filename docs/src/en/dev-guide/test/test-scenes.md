@@ -145,3 +145,13 @@ scene-default_server_1          /entrypoint.sh                   Up (healthy)   
 │  Grafana_Web_UI       │  http://xx.xxx.xx.xxx:10915                  │
 └───────────────────────┴──────────────────────────────────────────────┘
 ```
+
+# Misc
+## Update database
+There is a service named `mysql-data-init` in `docker-compose.yaml`. It is used to initialize database tables and pre-populate some data for its test scene.  
+This service does three things:
+1. mounts `server/extension/extension-common-flyway/src/main/resources/db/migration` to `/sql/0migration` in container 
+2. mounts `${test_scene_dir}/data.sql` to `/sql/1data/V999999__data.sql` in container
+3. executes all sql scripts lexicographically under `/sql` in container
+
+Most scenes will choose to reuse the `data.sql` of scene-default, and the docker-compose of these scenes will refer to the `data.sql` of scene-default instead of copying a copy to their own directory.

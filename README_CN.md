@@ -7,7 +7,10 @@
 
 # Contributing
 
-欢迎大家加入到 HoloInsight 文档建设中，一起把文档做的更好更全。如果你遇到了 HoloInsight 的文档问题，可随时
+欢迎大家加入到 HoloInsight 文档建设中，一起把文档做的更好更全。  
+你可以查阅这个[写作指南](docs/README_CN.md)。
+
+如果你遇到了 HoloInsight 的文档问题，可随时
 
 - 提 [issue](https://github.com/traas-stack/holoinsight-docs/issues) 来反馈，或者
 - 直接提交 [Pull Request](https://github.com/traas-stack/holoinsight-docs/pulls) 来进行修改。

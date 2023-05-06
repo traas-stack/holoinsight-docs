@@ -33,3 +33,18 @@ The './scripts/serve.sh' command is used to preview a book by serving it via HTT
 ```bash
 ./scripts/serve.sh
 ```
+
+# Ref images
+You can put images under `docs/src/resources` directory.  
+This directory will copy into your final build directory. So there will have 3 copies of `resources` under:
+1. docs/book/html/resources
+2. docs/book/html/cn/resources
+3. docs/book/html/en/resources
+
+In any Markdown doc, you can ref images using `${dir_to_SUMMARY.md}/resources/${your_image}`.
+
+For example:  
+In `docs/src/en/test/test-scenes.md` we use 
+```markdown
+![scene-default deployment](../../resources/images/dev-guide/test/scene-default.jpg)
+```

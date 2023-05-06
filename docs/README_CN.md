@@ -32,3 +32,19 @@ docs/
 ```bash
 ./scripts/serve.sh
 ```
+
+# 引用图片
+你可以将图片放在 `docs/src/resources` 目录下。  
+这个目录会被复制到最终的构建目录下。`resources` 目录一共会有3个副本，分别在：
+1. docs/book/html/resources
+2. docs/book/html/cn/resources
+3. docs/book/html/en/resources
+
+在任意一个 Markdown 文档里，你可以使用 `${dir_to_SUMMARY.md}/resources/${your_image}` 表达式来引用图片的地址。
+
+例如：  
+在 `docs/src/en/test/test-scenes.md` 里
+```markdown
+![scene-default deployment](../../resources/images/dev-guide/test/scene-default.jpg)
+```
+

@@ -5,8 +5,8 @@ This GPU plugin is automatically activated if `nvidia-smi` is present.
 
 This plugin does not require any configuration.
 
-![GPU dashboard](../../../resources/images/dev-guide/internals/dashboard-gpu.png)
-![GPU dashboard](../../../resources/images/dev-guide/internals/app-gpu.png)
+![GPU dashboard](../../resources/images/dev-guide/internals/dashboard-gpu.png)
+![GPU dashboard](../../resources/images/dev-guide/internals/app-gpu.png)
 
 # nvidia-smi commands
 

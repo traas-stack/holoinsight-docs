@@ -77,7 +77,7 @@ scene-default_server_1          /entrypoint.sh                   Up (healthy)   
 
 ### scene-default
 
-![scene-default deployment](/resources/images/dev-guide/test/scene-default.jpg)
+![scene-default deployment](../../resources/images/dev-guide/test/scene-default.jpg)
 > Running this scene consumes about 5GB of memory.
 
 The `scene-default` scene contains the following components:

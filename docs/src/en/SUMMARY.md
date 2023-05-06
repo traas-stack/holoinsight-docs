@@ -37,8 +37,9 @@
 - [Test](dev-guide/test/README.md)
   - [Test scenes](dev-guide/test/test-scenes.md)
 - [Log](dev-guide/log/README.md)
-- [Internals]()
+- [Internals](dev-guide/internals/README.md)
   - [Log multiline](dev-guide/internals/log-multiline.md)
+  - [GPU](dev-guide/internals/gpu.md)
 
 # Operations
 - [Deployment]()

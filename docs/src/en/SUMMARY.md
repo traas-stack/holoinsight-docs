@@ -40,6 +40,7 @@
 - [Internals](dev-guide/internals/README.md)
   - [Log multiline](dev-guide/internals/log-multiline.md)
   - [GPU](dev-guide/internals/gpu.md)
+  - [Anomaly detection_algorithm](dev-guide/internals/anomaly-detection-algorithm.md)
 
 # Operations
 - [Deployment]()

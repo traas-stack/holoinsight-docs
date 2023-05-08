@@ -24,8 +24,8 @@ POST   http://ai:5000/anomaly_detect
 | detectTime   |   Long    | Detection time                            |
 | isException  |   bool    | Check whether data is abnormal：True/False |
 # FOR EXAMPLE
-##Example For Value Rise Detect
-###InPut
+## Example For Value Rise Detect
+### InPut
 ```json
 {
   "inputTimeSeries": {
@@ -54,7 +54,7 @@ POST   http://ai:5000/anomaly_detect
   }
 }
 ```
-###OutPut
+### OutPut
 ```json
 {
   "detectTime": 1681711200000,
@@ -64,8 +64,8 @@ POST   http://ai:5000/anomaly_detect
   "traceId": null
 }
 ```
-##Example For Value Fall Detect
-###InPut
+## Example For Value Fall Detect
+### InPut
 ```json
 {
   "inputTimeSeries": {
@@ -94,7 +94,7 @@ POST   http://ai:5000/anomaly_detect
   }
 }
 ```
-###OutPut
+### OutPut
 ```json
 {
   "detectTime": 1681711200000,

@@ -2,15 +2,11 @@ Compile requirements:
 - node
 - yarn
 
-Install dependencies
-```bash
-yarn
-```
-
 Build dist
 ```bash
-yarn run build
+./scripts/front/build.sh
 ```
 
 Build result:
-- dist/
+- front/dist/: html/js/css/assets
+- front/dist.zip: the zip of `front/dist/`

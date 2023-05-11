@@ -39,6 +39,7 @@
 - [Log](dev-guide/log/README.md)
 - [Front](dev-guide/front/README.md)
   - [Build](dev-guide/front/build.md)
+  - [Run](dev-guide/front/run.md)
 - [Internals](dev-guide/internals/README.md)
   - [Log multiline](dev-guide/internals/log-multiline.md)
   - [GPU](dev-guide/internals/gpu.md)

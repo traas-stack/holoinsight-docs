@@ -19,7 +19,7 @@
 
 # 运维
 - [部署]()
-  - [Standalone/All-in-one]()
+  - [K8s](operations/deployment/k8s.md)
   - [微服务风格]()
 - [安装 Agent]()
   - [k8s]()

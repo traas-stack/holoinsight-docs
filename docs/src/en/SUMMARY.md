@@ -49,8 +49,9 @@
   - [Log charset](dev-guide/internals/log-charset.md)
 
 # Operations
-- [Deployment]()
-  - [Standalone/All-in-one]()
+- [Deployment](operations/deployment/k8s.md)
+  - [K8s](operations/deployment/k8s.md)
+  - [Helm charts](operations/deployment/k8s-helm-charts.md)
   - [Microservice style]()
   - [Deploy HoloInsight collector](operations/deployment/deploy-holoinsight-collector.md)
 - [Install Agent]()

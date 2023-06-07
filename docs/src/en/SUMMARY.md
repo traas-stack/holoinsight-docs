@@ -45,6 +45,8 @@
   - [GPU](dev-guide/internals/gpu.md)
   - [Anomaly detection_algorithm](dev-guide/internals/anomaly-detection-algorithm.md)
   - [Dialcheck](dev-guide/internals/dialcheck.md)
+  - [Log timeparse](dev-guide/internals/log-timeparse.md)
+  - [Log charset](dev-guide/internals/log-charset.md)
 
 # Operations
 - [Deployment]()

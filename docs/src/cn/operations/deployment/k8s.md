@@ -41,15 +41,21 @@ kubectl -n holoinsight-server get pods -w
 例子输出：
 ```text
 $ kubectl -n holoinsight-server get pods -w
+
 NAME                                      READY   STATUS    RESTARTS   AGE
-holoinsight-mongo-0                       1/1     Running   0          100s
-holoinsight-mysql-0                       1/1     Running   0          100s
-holoinsight-collector-5c5946df87-s24qm    1/1     Running   0          100s
-holoinsight-collector-5c5946df87-wtw4g    1/1     Running   0          100s
-holoinsight-prometheus-69795584d6-8fljk   1/1     Running   0          100s
-holoinsight-es-0                          1/1     Running   0          100s
-holoinsight-ceresdb-0                     1/1     Running   0          100s
-holoinsight-server-0                      1/1     Running   0          100s
+holoinsight-mongo-0                       0/1     Running   0          9s
+holoinsight-ceresdb-0                     0/1     Running   0          9s
+holoinsight-es-0                          0/1     Running   0          9s
+holoinsight-server-0                      0/1     Running   0          9s
+holoinsight-collector-7ff4bd95b7-jfnj4    0/1     Running   0          9s
+holoinsight-prometheus-69795584d6-w7njb   0/1     Running   0          9s
+holoinsight-mysql-0                       1/1     Running   0          9s
+holoinsight-mongo-0                       1/1     Running   0          13s
+holoinsight-collector-7ff4bd95b7-jfnj4    1/1     Running   0          13s
+holoinsight-ceresdb-0                     1/1     Running   0          13s
+holoinsight-es-0                          1/1     Running   0          17s
+holoinsight-prometheus-69795584d6-w7njb   1/1     Running   0          22s
+holoinsight-server-0                      1/1     Running   0          47s
 ```
 
 ## 初始化 HoloInsight
@@ -63,6 +69,7 @@ holoinsight-server-0                      1/1     Running   0          100s
 
 ```bash
 git clone https://github.com/traas-stack/holoinsight-helm-charts
+cd holoinsight-helm-charts
 
 # 某些脚本的行为依赖特定的版本，如果你刚安装的 HoloInsight 不是最新版，
 # 建议你使用 git checkout holoinsight-1.0.0 切换到对应的版本。
@@ -90,7 +97,8 @@ done
 
 将 HoloInsight 80 端口映射到本地 8080 端口：
 ```bash
-./scripts/server-port-forward.sh
+cd holoinsight-helm-charts
+./scripts/holoinsight/server-port-forward.sh
 ```
 
 输出样例：
@@ -102,6 +110,8 @@ Handling connection for 8080
 ```
 
 访问 http://localhost:8080 即可。
+
+此时页面上没有数据，你需要安装HoloInsight-Agent 和 示例应用以便产出一些数据.
 
 ## 定制 HoloInsight
 比如修改镜像版本，且增大容器规格。具体支持哪些定制请参考 Chart 内容。
@@ -179,11 +189,27 @@ helm -n holoinsight-agent upgrade --install holoinsight-agent holoinsight/holoin
 helm -n holoinsight-agent uninstall holoinsight-agent
 ```
 
+# 更多安装方法
+```bash
+helm -n holoinsight-server upgrade --install holoinsight https://github.com/traas-stack/holoinsight-helm-charts/releases/download/holoinsight-0.2.3/holoinsight-0.2.3.tgz
+
+# 如果你无法访问公网，你可以通过其他方式下载到本地然后使用：
+helm -n holoinsight-server upgrade --install holoinsight holoinsight-1.0.0.tgz 
+
+# 如果你想要修改 Chart 本身，想要在不发布 Chart 的情况下进行部署：
+helm -n holoinsight-server upgrade --install holoinsight PATH_TO_YOUR_holoinsight_chart_dir 
+```
+
 # 安装示例应用
 在探索 HoloInsight 之前，推荐安装 2 个实例应用到 K8s 集群里。让它们产生一些调用流量，提升 HoloInsight 上的展示效果。
 
 ```bash
-kubectl apply -f https://github.com/traas-stack/holoinsight-helm-charts/blob/main/scripts/holoinsight/demo.yaml
+cd holoinsight-helm-charts
+# 安装实例引用
+./scripts/holoinsight/demo-up.sh
+
+# 卸载实例引用 
+./scripts/holoinsight/demo-down.sh
 ```
 
 # 初次探索 HoloInsight

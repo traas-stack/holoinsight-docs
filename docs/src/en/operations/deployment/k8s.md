@@ -21,7 +21,7 @@ In production-level practice, you need to prepare these four databases (manually
 
 ```bash
 # Add holoinsight repository
-helm repo add holoinsight https://traas-stack/holoinsight-helm-charts/
+helm repo add holoinsight https://traas-stack.github.io/holoinsight-helm-charts/
 
 kubectl create namespace holoinsight-server
 helm -n holoinsight-server upgrade --install holoinsight holoinsight/holoinsight
@@ -41,15 +41,21 @@ kubectl -n holoinsight-server get pods -w
 Example output:
 ```text
 $ kubectl -n holoinsight-server get pods -w
+
 NAME                                      READY   STATUS    RESTARTS   AGE
-holoinsight-mongo-0                       1/1     Running   0          100s
-holoinsight-mysql-0                       1/1     Running   0          100s
-holoinsight-collector-5c5946df87-s24qm    1/1     Running   0          100s
-holoinsight-collector-5c5946df87-wtw4g    1/1     Running   0          100s
-holoinsight-prometheus-69795584d6-8fljk   1/1     Running   0          100s
-holoinsight-es-0                          1/1     Running   0          100s
-holoinsight-ceresdb-0                     1/1     Running   0          100s
-holoinsight-server-0                      1/1     Running   0          100s
+holoinsight-mongo-0                       0/1     Running   0          9s
+holoinsight-ceresdb-0                     0/1     Running   0          9s
+holoinsight-es-0                          0/1     Running   0          9s
+holoinsight-server-0                      0/1     Running   0          9s
+holoinsight-collector-7ff4bd95b7-jfnj4    0/1     Running   0          9s
+holoinsight-prometheus-69795584d6-w7njb   0/1     Running   0          9s
+holoinsight-mysql-0                       1/1     Running   0          9s
+holoinsight-mongo-0                       1/1     Running   0          13s
+holoinsight-collector-7ff4bd95b7-jfnj4    1/1     Running   0          13s
+holoinsight-ceresdb-0                     1/1     Running   0          13s
+holoinsight-es-0                          1/1     Running   0          17s
+holoinsight-prometheus-69795584d6-w7njb   1/1     Running   0          22s
+holoinsight-server-0                      1/1     Running   0          47s
 ```
 
 ## Initialize HoloInsight
@@ -63,7 +69,7 @@ The current product layer lacks an initialization guide page, so it needs to be 
 
 ```bash
 git clone https://github.com/traas-stack/holoinsight-helm-charts
-
+cd holoinsight-helm-charts
 # The behavior of some scripts depends on a specific version. If the HoloInsight you just installed is not the latest version,
 # It is recommended that you use git checkout holoinsight-1.0.0 to switch to the corresponding version.
 ./scripts/holoinsight/init.sh
@@ -90,7 +96,8 @@ The page access method provided here can only be used in the testing phase.
 
 Map HoloInsight port 80 to local port 8080:
 ```bash
-./scripts/server-port-forward.sh
+cd holoinsight-helm-charts
+./scripts/holoinsight/server-port-forward.sh
 ```
 
 Example output:
@@ -102,6 +109,8 @@ Handling connection for 8080
 ```
 
 Just visit http://localhost:8080.
+
+At this point there is no data on the page, you need to install HoloInsight-Agent and sample application to generate some data.
 
 ## Customize HoloInsight
 For example, modify the image version and increase the container size. For details about which customizations are supported, please refer to the Chart content.
@@ -181,11 +190,29 @@ helm -n holoinsight-agent upgrade --install holoinsight-agent holoinsight/holoin
 helm -n holoinsight-agent uninstall holoinsight-agent
 ```
 
-# Install the sample application
+# More installation methods
+```bash
+helm -n holoinsight-server upgrade --install holoinsight https://github.com/traas-stack/holoinsight-helm-charts/releases/download/holoinsight-0.2.3/holoinsight-0.2.3.tgz
+
+# If you can't access the public network, you can download it locally by other means and then use it.
+helm -n holoinsight-server upgrade --install holoinsight holoinsight-1.0.0.tgz 
+
+# If you want to modify the Chart itself, then deploy it without publishing the Chart.
+helm -n holoinsight-server upgrade --install holoinsight PATH_TO_YOUR_holoinsight_chart_dir 
+```
+
+Check [here](https://helm.sh/zh/docs/intro/using_helm/#%E6%9B%B4%E5%A4%9A%E5%AE%89%E8%A3%85%E6%96%B9%E6%B3%95) for more details.
+
+# Install the sample applications
 Before exploring HoloInsight, it is recommended to install 2 instances and apply them to the K8s cluster. Let them generate some call traffic to improve the display on HoloInsight.
 
 ```bash
-kubectl apply -f https://github.com/traas-stack/holoinsight-helm-charts/blob/main/scripts/holoinsight/demo.yaml
+cd holoinsight-helm-charts
+# Install sample applications
+./scripts/holoinsight/demo-up.sh
+
+# Uninstall sample applications
+./scripts/holoinsight/demo-down.sh
 ```
 
 # Exploring HoloInsight for the first time

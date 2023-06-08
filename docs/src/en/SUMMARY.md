@@ -26,7 +26,7 @@
 - [Dev requirements](dev-guide/dev-requirements.md)
   - [Conventional Commit](dev-guide/conventional_commit.md)
   - [Database table structures](dev-guide/database-table-structures.md)
-- [Build]()
+- [Build](dev-guide/build/compile.md)
   - [Compile](dev-guide/build/compile.md)
   - [Build docker image](dev-guide/build/build-docker-image.md)
   - [Docker image details](dev-guide/build/docker-image-details.md)
@@ -53,11 +53,7 @@
 - [Deployment](operations/deployment/k8s.md)
   - [K8s](operations/deployment/k8s.md)
   - [Helm charts](operations/deployment/k8s-helm-charts.md)
-  - [Microservice style]()
   - [Deploy HoloInsight collector](operations/deployment/deploy-holoinsight-collector.md)
-- [Install Agent]()
-  - [k8s]()
-- [Troubleshooting]()
 
 
 # Technical and Design

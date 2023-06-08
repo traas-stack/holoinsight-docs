@@ -34,7 +34,20 @@ HoloInsight-Agent use the `/etc/localtime` of main container of target pod as th
 > At this time, it is required that there is only one biz, otherwise the acquisition target is not unique.
 > The judgment method of sidecar container can refer to the code of HoloInsight-Agent: DefaultSidecarCheckHookInstance.
 
-For details, refer to this article https://man7.org/linux/man-pages/man5/localtime.5.html.
-If fail to parse `/etc/localtime` the default timezone is UTC.
+For details, refer to this [article](https://man7.org/linux/man-pages/man5/localtime.5.html).  
+
+The processing sequence is as follows:
+1. readlink /etc/localtime
+2. If there is no error and the result is pointing to '/usr/share/zoneinfo/', followed by a timezone identifier such as "Europe/Berlin" or "Etc/UTC", timezone is parsed successfully.
+3. If /etc/localtime is missing, the default "UTC" timezone is used.
+
+Notice: *timezone info of a container is updated only once in agent's lifecycle*.
+Updating /etc/localtime after the container starts has no effect on the current agent and is not persistent.
 
 This is currently the only authoritative source for the log time zone. Other methods such as the TZ environment variable, or various programming language control time zone methods cannot be supported by HoloInsight-Agent.
+
+## How to set timezone in a container
+Add following commands to your Dockerfile:
+```dockerfile
+RUN ln -snf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+```

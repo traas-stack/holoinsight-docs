@@ -47,6 +47,7 @@
   - [Dialcheck](dev-guide/internals/dialcheck.md)
   - [Log timeparse](dev-guide/internals/log-timeparse.md)
   - [Log charset](dev-guide/internals/log-charset.md)
+  - [Lossless restart and deploy](dev-guide/internals/lossless-restart-and-deploy.md)
 
 # Operations
 - [Deployment](operations/deployment/k8s.md)

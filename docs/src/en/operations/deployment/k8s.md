@@ -21,7 +21,7 @@ In production-level practice, you need to prepare these four databases (manually
 
 ```bash
 # Add holoinsight repository
-helm repo add holoinsight https://holoinsight.github.io/holoinsight-helm-charts/
+helm repo add holoinsight https://traas-stack/holoinsight-helm-charts/
 
 kubectl create namespace holoinsight-server
 helm -n holoinsight-server upgrade --install holoinsight holoinsight/holoinsight

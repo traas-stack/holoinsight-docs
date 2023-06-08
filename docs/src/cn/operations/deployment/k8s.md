@@ -116,7 +116,7 @@ server:
     limits:
       cpu: "4"
       memory: "8Gi"
-  # applicationYaml: override application.yaml of Spring Boot
+# applicationYaml: override application.yaml of Spring Boot
 ```
 
 更多配置查看 [server-bootstrap-configuration](../../../dev-guide/run/server-bootstrap-configuration.html)。
@@ -152,6 +152,18 @@ server:
   gateway:
     addr: gateway.holoinsight-server:19610
   secure: false
+
+# 如果你使用的是 containerd 或 k3s+containerd，你应该将 containerd 的 run 目录挂载到 cadvisor.
+# 如下是 k3s+containerd 场景的配置：
+#cadvisor:
+#  volumes:
+#  - name: containerd
+#    hostPath:
+#      path: /run/k3s/containerd
+#  volumeMounts:
+#  - name: containerd
+#    mountPath: /run/containerd
+#    readOnly: true
 ```
 更多配置查看 [agent-bootstrap-configuration](../../../dev-guide/run/agent-bootstrap-configuration.html)。
 

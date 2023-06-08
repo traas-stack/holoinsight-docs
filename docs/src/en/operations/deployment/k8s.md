@@ -59,7 +59,7 @@ The current product layer lacks an initialization guide page, so it needs to be 
 1. Add a tenant named "default" and configure its storage to use CeresDB
 2. Add an apikey "default"
 3. Import the JVM plugin
-4. Enter the application monitoring left menu configuration
+4. Add the application monitoring left menu configuration
 
 ```bash
 git clone https://github.com/traas-stack/holoinsight-helm-charts
@@ -116,7 +116,7 @@ server:
     limits:
       cpu: "4"
       memory: "8Gi"
-  # applicationYaml: override application.yaml of Spring Boot
+# applicationYaml: override application.yaml of Spring Boot
 ```
 
 For more configuration, see [server-bootstrap-configuration](../../../dev-guide/run/server-bootstrap-configuration.html).
@@ -152,6 +152,20 @@ server:
   gateway:
     addr: gateway.holoinsight-server:19610
   secure: false
+
+
+# If you are using containerd or containerd based k3s, you should mount containerd run directory into cadvisor.
+# The following is the config for k3s+containerd.
+#cadvisor:
+#  volumes:
+#  - name: containerd
+#    hostPath:
+#      path: /run/k3s/containerd
+#  volumeMounts:
+#  - name: containerd
+#    mountPath: /run/containerd
+#    readOnly: true
+
 ```
 For more configuration, see [agent-bootstrap-configuration](../../../dev-guide/run/agent-bootstrap-configuration.html).
 

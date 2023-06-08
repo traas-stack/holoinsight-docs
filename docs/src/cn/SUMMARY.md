@@ -7,7 +7,7 @@
 
 
 # 用户指南
-
+- [JVM 性能监控](user-guide/jvm-performance-monitor.md)
 
 # 开发指南
 - [构建]()

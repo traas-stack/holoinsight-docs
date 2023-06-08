@@ -7,19 +7,13 @@
 
 
 # User Guide
-- [Page Layout]()
-- [Infrastructure monitoring]()
-- [Integrations]()
 - [Application monitoring](user-guide/apm/application-monitoring.md)
   - [Send traces to HoloInsight](user-guide/apm/send-traces-to-holoinsight.md)
   - [Service topology](user-guide/apm/service-topology.md)
   - [APM metric data](user-guide/apm/apm-metric-data.md)
   - [Distributed tracing](user-guide/apm/distributed-tracing.md)
   - [Downstream components](user-guide/apm/downstream-components.md)
-- [Log monitoring]()
-- [Dashboard]()
-- [Dashboard]()
-- [Alert]()
+- [JVM performance monitor](user-guide/jvm-performance-monitor.md)
 
 # Dev Guide
 - [Project structure](dev-guide/project-structure.md)

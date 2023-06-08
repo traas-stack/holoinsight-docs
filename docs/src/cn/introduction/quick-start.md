@@ -33,9 +33,11 @@ sh ./deploy/examples/docker-compose/up.sh
    访问 http://localhost:8080  
    产品的使用方法可以参考[这个文档](https://github.com/traas-stack/holoinsight-docs/blob/main/docs/src/cn/product/quick-start.md)。
 
-# 使用 k8s 部署
+# 使用 K8s 部署
+> 现在更推荐参考[这个文档](../operations/deployment/k8s.md)基于 K8s 部署
+
 先决条件:
-1. 有 k8s 集群
+1. 有 K8s 集群
 2. 有 Linux 或 Mac 环境
 
 
@@ -44,13 +46,13 @@ sh ./deploy/examples/docker-compose/up.sh
 git clone https://github.com/traas-stack/holoinsight.git --depth 1 
 ```
 
-2. 部署 k8s 资源
+2. 部署 K8s 资源
 ```bash
 sh ./deploy/examples/k8s/overlays/example/apply.sh
 ```
-> Notice: 你的 k8s 用户必须有权限创建 ClusterRole。
+> Notice: 你的 K8s 用户必须有权限创建 ClusterRole。
 
-使用如下脚本将 Holoinsight 从 k8s 集群中卸载。
+使用如下脚本将 Holoinsight 从 K8s 集群中卸载。
 ```bash
 # sh ./deploy/examples/k8s/overlays/example/delete.sh
 ```

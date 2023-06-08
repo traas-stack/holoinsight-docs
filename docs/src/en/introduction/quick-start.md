@@ -86,6 +86,8 @@ Removing network scene-default_default
 
 
 # Deploy using k8s
+> Now it is recommended to refer to [this document](../operations/deployment/k8s.md) to deploy based on K8s
+
 Requirements:
 1. k8s cluster
 2. Linux or Mac environment

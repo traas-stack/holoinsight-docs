@@ -27,27 +27,52 @@ At this point, you need to explicitly configure the timestamp parsing method on 
 ![log-timeparse.png](log-timeparse.png)
 
 # Log timezone
-When parse str to time, the `timezone` is required.
-HoloInsight-Agent use the `/etc/localtime` of main container of target pod as the timezone to parse time in logs.
+When parsing a string to time, the `timezone` is required.
+HoloInsight-Agent use the Env `TZ` or `/etc/localtime` of main container of target pod as the timezone to parse time in logs.
 > In most cases, a pod contains a business container and sandbox container. The business container is the main container of the pod.
 > When a pod contains more than 2 containers (including sandbox container), non-sandbox containers will be divided into biz and sidecar containers.
-> At this time, it is required that there is only one biz, otherwise the acquisition target is not unique.
+> At this time, it is required that there is only one business container, otherwise the acquisition target is not unique.
 > The judgment method of sidecar container can refer to the code of HoloInsight-Agent: DefaultSidecarCheckHookInstance.
 
 For details, refer to this [article](https://man7.org/linux/man-pages/man5/localtime.5.html).  
 
 The processing sequence is as follows:
-1. readlink /etc/localtime
-2. If there is no error and the result is pointing to '/usr/share/zoneinfo/', followed by a timezone identifier such as "Europe/Berlin" or "Etc/UTC", timezone is parsed successfully.
-3. If /etc/localtime is missing, the default "UTC" timezone is used.
+1. Check if there is an Env named `TZ` in the container spec, and if so, use it
+2. If the `/etc/localtime` of the container is a symbol link, then parse timezone info from the link (such as `/usr/share/zoneinfo/Asia/Shanghai` => `Asia/Shanghai`)
+3. If the `/etc/localtime` of the container is a regular file, then parse timezone info and use it
 
-Notice: *timezone info of a container is updated only once in agent's lifecycle*.
-Updating /etc/localtime after the container starts has no effect on the current agent and is not persistent.
+Notice: **timezone info of a container is updated only once in agent's lifecycle**.
+Updating `/etc/localtime` after the container starts has no effect on the current agent and is not persistent.
 
-This is currently the only authoritative source for the log time zone. Other methods such as the TZ environment variable, or various programming language control time zone methods cannot be supported by HoloInsight-Agent.
+### An extreme error scenario
+When the user mounts `/usr/share/zoneinfo/Asia/Shanghai` of the host to `/etc/localtime` of the container, the real result may be:
+1. `/etc/localtime` in the container is **still** a symbol link, pointing to `/usr/share/zoneinfo/UTC` or `../usr/share/zoneinfo/UTC`
+2. The content of `/usr/share/zoneinfo/UTC` in the container becomes the content of `Asia/Shanghai`.
+
+The reason for this phenomenon is that the **k8s mount action will follow symbol link**.
+
+In order to get correct results, we must read the timezone file once.
+In fact, `/usr/share/zoneinfo/UTC` is covered by mount, but it cannot be seen from the mounts information (because there are some symbol links in the middle).
+Therefore, the read request must be initiated from inside the container.
+
+Now, while this situation itself is uncommon and problematic, Holoinsight-Agent still parses the time correctly.
+
+### For logs with time zone information
+```text
+2006-01-02 15:04:05 +08:00 xxx logs ...
+```
+Currently, HoloInsight-Agent does not take advantage of such timezones in logs.
 
 ## How to set timezone in a container
-Add following commands to your Dockerfile:
+Use one of the following methods to set the time zone of the container. The scheme with the higher serial number is recommended.
+
+1. Add following commands to your Dockerfile:
 ```dockerfile
 RUN ln -snf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+```
+
+2. Add Env TZ to your container k8s yaml(TODO required Agent version ?)
+```yaml
+- name: TZ
+  value: Asia/Shanghai
 ```

@@ -15,6 +15,8 @@
   - [构建 Docker 镜像](dev-guide/build/build-docker-image.md)
 - [运行]()
 - [日志]()
+- [内部细节]()
+  - [日志时间解析](dev-guide/internals/log-timeparse.md)
 
 
 # 运维

@@ -1,4 +1,4 @@
-# Log Sample
+# Log sample
 
 Log sampling is based on user-defined log monitoring and retains several logs that cause the indicator to be generated.
 - For example, you now have a custom monitor with the following metrics:

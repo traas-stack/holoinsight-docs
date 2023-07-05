@@ -13,6 +13,14 @@
   - [APM metric data](user-guide/apm/apm-metric-data.md)
   - [Distributed tracing](user-guide/apm/distributed-tracing.md)
   - [Downstream components](user-guide/apm/downstream-components.md)
+- [Log monitoring](user-guide/logmonitor/basic.md)
+  - [Create log monitoring](create-log-monitor.md)
+  - [Key word count](key-word-collect.md)
+  - [Log folder](log-folder.md)
+  - [Dim translate](dim-translate.md)
+  - [Post filtering](log-after-filter.md)
+  - [Log pattern](log-pattern.md)
+  - [Log sample](log-sample.md)
 - [JVM performance monitor](user-guide/jvm-performance-monitor.md)
 
 # Dev Guide

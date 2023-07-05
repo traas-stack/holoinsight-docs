@@ -1,4 +1,4 @@
-# Log Folder
+# Log folder
 
 Add folder, and move a monitor in the folder.
 

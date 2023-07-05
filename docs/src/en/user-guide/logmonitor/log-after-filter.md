@@ -1,4 +1,4 @@
-# Post Filtering
+# Post filtering
 
 You can perform post-filtering for the indicator table composed of the segmented dimensions and indicators.
 

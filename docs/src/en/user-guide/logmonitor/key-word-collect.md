@@ -1,4 +1,4 @@
-# Key Word Count
+# Key word count
 
 There are two ways to monitor keyword matches
 

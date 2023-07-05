@@ -1,4 +1,4 @@
-# Dim Translate
+# Dim translate
 Fields that are shred for log monitoring can be converted to easy-to-understand strings using conversion functions
 
 The conversion function can do **_elect_** (shred) out of the field to continue to do the conversion, the process is similar to the unix pipeline.

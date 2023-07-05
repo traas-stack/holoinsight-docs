@@ -5,13 +5,17 @@ Log data naturally has good characteristics.
 * Third, log-based observation is non-intrusive, there is no need to connect the third-party SDK to the business process, and effectively prevent various performance, stability, security and other concerns brought about by external code intrusion.
 
 HoloInsight allows you to monitor logs, freely count the required indicators, combine and calculate them, and generate the necessary data and reports.  This tutorial explains how to use log monitoring.
-1. [Log Monitoring](create-log-monitor.md).
+[Create log monitoring](create-log-monitor.md)
+
+The specific flow diagram can be seen in the following figure
+![logmonitor-case.png](../../../resources/images/user-guide/logmonitor/logmonitor-case.png)
+
 
 There are also some higher-order features:
-1. [Key Word Count](key-word-collect.md)
-2. [Log Folder](log-folder.md).
-3. [Dim Translate](dim-translate.md).
-3. [Post Filtering](log-after-filter.md).
-4. [Log Pattern](log-pattern.md).
-5. [Log Sample](log-sample.md).
+1. [Key word count](key-word-collect.md)
+2. [Log folder](log-folder.md).
+3. [Dim translate](dim-translate.md).
+3. [Post filtering](log-after-filter.md).
+4. [Log pattern](log-pattern.md).
+5. [Log sample](log-sample.md).
 

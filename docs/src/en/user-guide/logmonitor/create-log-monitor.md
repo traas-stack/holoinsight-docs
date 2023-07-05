@@ -1,3 +1,4 @@
+# Create log monitoring
 
 Log monitoring is a general term for various customized and personalized data access methods. 
 You can use custom monitoring to access various types of log data sources, collect required indicators, 
@@ -5,10 +6,6 @@ combine and calculate them, and generate required data and reports. You can also
 to learn about data anomalies in time and handle them accordingly. 
 
 This section describes how to create a log monitoring.
-
-### Schematic Diagram
-![logmonitor-case.png](../../../resources/images/user-guide/logmonitor/logmonitor-case.png)
-
 
 ### Step 1: Create log monitoring
 1. Log on to the **HoloInsight Monitoring Console** and click **Log monitoring** in the left navigation bar.

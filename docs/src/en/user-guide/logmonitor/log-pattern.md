@@ -1,4 +1,4 @@
-# Log Pattern
+# Log pattern
 Pattern matching is a user-defined monitoring plugin. It monitors and collects statistics on keywords that are not in fixed positions in logs. For example, it collects statistics on certain errors in Error logs. Pattern matching is mostly used for logs with irregular formats, such as logs without dates.
 
 ### Use Case

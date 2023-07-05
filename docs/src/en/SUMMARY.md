@@ -14,7 +14,7 @@
   - [Distributed tracing](user-guide/apm/distributed-tracing.md)
   - [Downstream components](user-guide/apm/downstream-components.md)
 - [Log monitoring](user-guide/logmonitor/basic.md)
-  - [Create log monitoring](user-guide/logmonitor/reate-log-monitor.md)
+  - [Create log monitoring](user-guide/logmonitor/create-log-monitor.md)
   - [Key word count](user-guide/logmonitor/key-word-collect.md)
   - [Log folder](user-guide/logmonitor/log-folder.md)
   - [Dim translate](user-guide/logmonitor/dim-translate.md)

@@ -14,12 +14,12 @@ Log sampling is based on user-defined log monitoring and retains several logs th
 #### Step 1 : EDIT
 When configuring counters, add sampling conditions to perform log sampling
 
-![log-sample-edit.png](../../../resources/images/user-guide/logmonitor/log-sample-edit.png)
+![log-sample-edit.png](https://github.com/traas-stack/holoinsight-docs/raw/main/docs/src/resources/images/user-guide/logmonitor/log-sample-edit.png)
 
 #### Step 2 : VIEW
 Placing the mouse over the number brings up the sampling event.
 
-![log-sample-view.png](../../../resources/images/user-guide/logmonitor/log-sample-view.png)
+![log-sample-view.png](https://github.com/traas-stack/holoinsight-docs/raw/main/docs/src/resources/images/user-guide/logmonitor/log-sample-view.png)
 
 ### Config Meta
 

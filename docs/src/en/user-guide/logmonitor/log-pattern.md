@@ -13,17 +13,17 @@ Pattern matching is a user-defined monitoring plugin. It monitors and collects s
   - One is to generate event codes based on keywords matching log content. 
   - The other supports log generated event codes that satisfy regular expressions.
 
-![log-pattern.png](../../../resources/images/user-guide/logmonitor/log-pattern.png)
+![log-pattern.png](https://github.com/traas-stack/holoinsight-docs/raw/main/docs/src/resources/images/user-guide/logmonitor/log-pattern.png)
 
 ### Step2
 
 When configuring indicators, you need to select a mode matching mode
-![log-pattern-metric.png](../../../resources/images/user-guide/logmonitor/log-pattern-metric.png)
+![log-pattern-metric.png](https://github.com/traas-stack/holoinsight-docs/raw/main/docs/src/resources/images/user-guide/logmonitor/log-pattern-metric.png)
 
 
 ### Step3
 Placing the mouse over the number brings up the sampling event.
-![log-pattern-view.png](../../../resources/images/user-guide/logmonitor/log-pattern-view.png)
+![log-pattern-view.png](https://github.com/traas-stack/holoinsight-docs/raw/main/docs/src/resources/images/user-guide/logmonitor/log-pattern-view.png)
 
 
 ### Config Meta

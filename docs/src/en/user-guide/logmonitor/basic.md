@@ -8,7 +8,7 @@ HoloInsight allows you to monitor logs, freely count the required indicators, co
 [Create log monitoring](create-log-monitor.md)
 
 The specific flow diagram can be seen in the following figure
-![logmonitor-case.png](../../../resources/images/user-guide/logmonitor/logmonitor-case.png)
+![logmonitor-case.png](https://github.com/traas-stack/holoinsight-docs/raw/main/docs/src/resources/images/user-guide/logmonitor/logmonitor-case.png)
 
 
 There are also some higher-order features:

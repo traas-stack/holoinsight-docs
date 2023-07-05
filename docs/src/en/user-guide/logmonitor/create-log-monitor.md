@@ -14,11 +14,11 @@ This section describes how to create a log monitoring.
     - Method 1: Click **Add** in the upper right corner to add a monitor.
     - Method 2:  Tap **Create folder**, to add a monitor in the folder.
 
-![logmonitor-overview.png](../../../resources/images/user-guide/logmonitor/logmonitor-overview.png)
+![logmonitor-overview.png](https://github.com/traas-stack/holoinsight-docs/raw/main/docs/src/resources/images/user-guide/logmonitor/logmonitor-overview.png)
 ### Step 2: Configure log monitoring
 Configuring log monitoring includes **Basic configuration**, **Log extraction**, and **Metric definition**.
 #### Basic configuration
-![create-basic-info.png](../../../resources/images/user-guide/logmonitor/create-basic-info.png)
+![create-basic-info.png](https://github.com/traas-stack/holoinsight-docs/raw/main/docs/src/resources/images/user-guide/logmonitor/create-basic-info.png)
 
 - **Name**: The name of log monitor.
 - **Online status**: The status of the acquisition configuration, online status is valid.
@@ -34,7 +34,7 @@ Configuring log monitoring includes **Basic configuration**, **Log extraction**,
 1. Extract online logs
 - Pull online log: Tap the **Refresh** icon to pull online logs again. 
 
-![create-pull-log.png](../../../resources/images/user-guide/logmonitor/create-pull-log.png)
+![create-pull-log.png](https://github.com/traas-stack/holoinsight-docs/raw/main/docs/src/resources/images/user-guide/logmonitor/create-pull-log.png)
 - Edit online log source: Click the** Edit **icon to select the log sample source, either **Online logs** or **Manual input**.
 
     i. Select **Online log**, follow the steps below to configure it.
@@ -44,7 +44,7 @@ Configuring log monitoring includes **Basic configuration**, **Log extraction**,
     
     ii：Select **Manual input**, Perform the following steps to configure:
 
-![create-pull-select-log.png](../../../resources/images/user-guide/logmonitor/create-pull-select-log.png)
+![create-pull-select-log.png](https://github.com/traas-stack/holoinsight-docs/raw/main/docs/src/resources/images/user-guide/logmonitor/create-pull-select-log.png)
 
 - Fill in the description content in the **Log input**.
 - Tap **OK**. The online log is pulled successfully.
@@ -57,7 +57,7 @@ Configuring log monitoring includes **Basic configuration**, **Log extraction**,
    - Select **Specify location** text box head line or end of line to of the log. 
    - Enter a regexp in the **Regular expression** text box to describe header or footer of the log, easier for the Agent to cut the log.
    
-![create-multi-line-log.png](../../../resources/images/user-guide/logmonitor/create-multi-line-log.png)
+![create-multi-line-log.png](https://github.com/traas-stack/holoinsight-docs/raw/main/docs/src/resources/images/user-guide/logmonitor/create-multi-line-log.png)
 
 3. Configure log prefilter
 
@@ -67,7 +67,7 @@ Configuring log monitoring includes **Basic configuration**, **Log extraction**,
 2. Enable the **log prefilter** function. Follow the steps below to configure it:
     1. In the **Preceding rules**, click **Add filter rule**.  **Add column definition** panel pops up.
 
-![create-front-filter.png](../../../resources/images/user-guide/logmonitor/create-front-filter.png)
+![create-front-filter.png](https://github.com/traas-stack/holoinsight-docs/raw/main/docs/src/resources/images/user-guide/logmonitor/create-front-filter.png)
 
    2. In the **Add column definition** panel, select **Filter rules**, you can match keywords or filter from left to right.
       - Match Keywords
@@ -81,7 +81,7 @@ There are four types of segment rules. You can choose the one right for your nee
   - In the **Segmentation method** selection bar, click **From left to right**.
   - Click **Add segmentation rule** to jump to the **Add column definition** panel.
  
-![log-left-right.png](../../../resources/images/user-guide/logmonitor/log-left-right.png)
+![log-left-right.png](https://github.com/traas-stack/holoinsight-docs/raw/main/docs/src/resources/images/user-guide/logmonitor/log-left-right.png)
 
   - Complete information under the **Add column definition** panel and click **Confirm.**
 
@@ -89,7 +89,7 @@ There are four types of segment rules. You can choose the one right for your nee
 
   - After editing the **Edit Column Configuration** panel, click **OK**. The configuration of segmentation rule of from left to right is complete.
 
-![log-left-right-add.png](../../../resources/images/user-guide/logmonitor/log-left-right-add.png)
+![log-left-right-add.png](https://github.com/traas-stack/holoinsight-docs/raw/main/docs/src/resources/images/user-guide/logmonitor/log-left-right-add.png)
 
 - By separator
 
@@ -97,7 +97,7 @@ There are four types of segment rules. You can choose the one right for your nee
   ⅱ. Enter the separator in the separator text box and click **Confirm Segmentation**.
   ⅲ. Click **Add** in the** Column Configuration** column to define the column value for the field after segmentation.
   
-![log-split.png](../../../resources/images/user-guide/logmonitor/log-split.png)
+![log-split.png](https://github.com/traas-stack/holoinsight-docs/raw/main/docs/src/resources/images/user-guide/logmonitor/log-split.png)
 
 - By regex
 
@@ -109,7 +109,7 @@ There are four types of segment rules. You can choose the one right for your nee
 
 1. Click **Add Monitoring metrics** to slide out the** Add monitoring metric **panel on the right.
 
-![create-collect-metric.png](../../../resources/images/user-guide/logmonitor/create-collect-metric.png)
+![create-collect-metric.png](https://github.com/traas-stack/holoinsight-docs/raw/main/docs/src/resources/images/user-guide/logmonitor/create-collect-metric.png)
 
 2. On the **Add monitoring metrics** page, fill in configuration info.
     1. **Name**: Enter the name of the new monitoring metric.
@@ -118,13 +118,13 @@ There are four types of segment rules. You can choose the one right for your nee
        ▪ **Keyword count**: Monitor the metric by entering keywords and performing counting. 
        ▪ **Numerical Extraction**: Monitor numerical metrics by entering the corresponding numerical values.
     
-![create-collect-metric-edit.png](../../../resources/images/user-guide/logmonitor/create-collect-metric-edit.png)
+![create-collect-metric-edit.png](https://github.com/traas-stack/holoinsight-docs/raw/main/docs/src/resources/images/user-guide/logmonitor/create-collect-metric-edit.png)
 
 3. After filling it, click **Save.**
 ### Step 3: View data
 
 1. On the left navigation bar, select **Log monitoring** and click **Monitoring configuration**. The** Data preview** page is displayed.
 
-![view-data.png](../../../resources/images/user-guide/logmonitor/view-data.png)
+![view-data.png](https://github.com/traas-stack/holoinsight-docs/raw/main/docs/src/resources/images/user-guide/logmonitor/view-data.png)
 
 2. On the** Data preview** page, you can view data.

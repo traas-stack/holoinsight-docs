@@ -29,7 +29,7 @@ Here we support 5 conversion functions
    - params:
       - value: const string
    
-![log-dim-transform.png](../../../resources/images/user-guide/logmonitor/log-dim-transform.png)
+![log-dim-transform.png](https://github.com/traas-stack/holoinsight-docs/raw/main/docs/src/resources/images/user-guide/logmonitor/log-dim-transform.png)
 
 
 ### Use Case

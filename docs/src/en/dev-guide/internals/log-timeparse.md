@@ -1,4 +1,101 @@
-# Log timeparse
+# Log time parsing
+The parsing of the timestamp has the following steps:
+1. To extract the time string, you need to use elect to extract the time string
+2. Determine the time zone, if the time zone of the container is empty, then use the time zone
+3. Try to parse the time string into a millisecond timestamp, this step needs to understand the format and layout of the time string
+
+The extraction configuration of the timestamp is defined by the following structure:
+```go
+type TimeConf struct {
+    Type string `json:"type"`
+    Elect *Elect `json:"elect"`
+    Format string `json:"format"`
+    Layout string `json:"layout"`
+    Timezone string `json:"timezone"`
+}
+```
+
+`type` defines the overall parsing type:
+1. `auto`: Fully automatic parsing: If you choose auto mode, then try to automatically extract the time from the log line, it is only applicable to simple logs with the timestamp at the beginning of the line, and all other fields do not need to be configured at this time
+2. `processTime`: The time when the log is read is used as the timestamp, which has a large uncertainty. At this time, all other fields do not need to be configured
+3. `elect`: Extract the timestamp string from the log line, and then parse it into a millisecond-level timestamp. In this case, you need to use the elect/format/layout/timezone field
+
+For the case of `type = elect`:
+1. `elect`: used to extract the time string
+2. `format`: describes the style of the time string:
+   a. `unix`: second-level timestamp
+   b. `unixMilli`: millisecond timestamp
+   c. `golangLayout`: Its format is described by a Golang-style string, and the Layout field needs to be used at this time
+   d. `auto`: A scenario similar to type=auto, it can automatically guess the format and layout of the timestamp
+3. `layout`: only used when format = golangLayout, layout is a Golang-style time format
+4. `timezone`: time zone, it is not recommended to fill in; it is recommended that the time zone of the log and the container be consistent; if the container time zone resolution is not empty, the container time zone is preferred
+
+
+## Example
+Example 1:
+Simple logs:
+- 2023-08-04 11:50:05 [main] biz log biz log biz log ... 
+- 2023-08-04 11:50:05.123 [main] biz log biz log biz log ...
+- 2023-08-04 11:50:05,123 [main] biz log biz log biz log ...
+- 2023-08-04T11:50:05 [main] biz log biz log biz log ...
+- 2023-08-04 11:50:05 +08:00 [main] biz log biz log biz log ...
+
+> At this time, the time zone of the container will be used to parse the time.
+
+```json
+{
+   "type": "auto"
+}
+```
+
+Example 2:
+Each line of the user's log is a json string, and the timestamp is in the myTime field. For the time format of myTime, field parsing is used.
+- `{"bizField1":"1", "bizField2":"2", "myTime": "2023-08-04 11:50:05"}`
+
+```json
+{
+   "type": "elect",
+   "elect": {
+      "type": "refName",
+         "refName": {
+         "name": "myTime"
+      }
+   },
+   "format": "auto"
+}
+```
+
+> At this time, the time zone of the container will be used to parse the time.
+
+Example 3:
+Each log line of the user is a json string, and the timestamp is in the myTime field. The time format of myTime is parsed in the "2006-01-02 15:04:05" Golang-style time format.
+- `{"bizField1":"1", "bizField2":"2", "myTime": "2023-08-04 11:50:05"}`
+```
+{
+   "type": "elect",
+   "elect": {
+      "type": "refName",
+      "refName": {
+         "name": "myTime"
+      }
+   },
+   "format": "golangLayout",
+   "layout": "2006-01-02 15:04:05"
+}
+```
+> At this time, the time zone of the container will be used to parse the time.
+
+Example 4:
+Use processing time as timestamp
+```
+{
+   "type": "processTime"
+}
+```
+
+# Automatic log time parsing
+As mentioned above, HoloInsight-Agent can do some automatic time parsing. In fact, it has built-in support for parsing some common time formats.
+
 When using log monitoring, if no time column is explicitly configured, HoloInsight-Agent will try to automatically parse the time from the log.
 But it can only support a few common formats.
 

@@ -5,8 +5,8 @@ A service topology consists of `nodes` and `edges`. A node represents the servic
 
 You can inspect the topology of all applications from the perspective of tenants.
 
-![img.png](https://github.com/traas-stack/holoinsight-docs/raw/main/docs/src/resources/images/user-guide/apm/tenant-topology.png)
+![tenant-topology.png.png](https://github.com/traas-stack/holoinsight-docs/raw/main/docs/src/resources/images/user-guide/apm/tenant-topology.png)
 
 And you can also focus on a certain application, interface or instance, and inspect their upstream and downstream based on the view depth you choose.
 
-![img_1.png](https://github.com/traas-stack/holoinsight-docs/raw/main/docs/src/resources/images/user-guide/apm/endpoint-topology.png)
+![endpoint-topology.png.png](https://github.com/traas-stack/holoinsight-docs/raw/main/docs/src/resources/images/user-guide/apm/endpoint-topology.png)

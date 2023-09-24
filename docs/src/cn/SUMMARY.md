@@ -7,7 +7,10 @@
 
 
 # 用户指南
-- [JVM 性能监控](user-guide/jvm-performance-monitor.md)
+- [集成](user-guide/integrations/base.md)
+  - [JVM 性能监控](user-guide/integrations/jvm/jvm-performance-monitor.md)
+  - [OpenAIMonitor 插件](user-guide/integrations/openai/openai-monitor.md)
+  - [LangChainMonitor 插件](user-guide/integrations/langchain/langchain-monitor.md)
 
 # 开发指南
 - [构建]()

@@ -21,7 +21,10 @@
   - [Post filtering](user-guide/logmonitor/log-after-filter.md)
   - [Log pattern](user-guide/logmonitor/log-pattern.md)
   - [Log sample](user-guide/logmonitor/log-sample.md)
-- [JVM performance monitor](user-guide/jvm-performance-monitor.md)
+- [Integrations](user-guide/integrations/base.md)
+  - [JVM performance monitor](user-guide/integrations/jvm/jvm-performance-monitor.md)
+  - [OpenAIMonitor plugin](user-guide/integrations/openai/openai-monitor.md)
+  - [LangChainMonitor plugin](user-guide/integrations/langchain/langchain-monitor.md)
 
 # Dev Guide
 - [Project structure](dev-guide/project-structure.md)

@@ -5,3 +5,4 @@ This is a guide to using integration, including integration component libraries 
 - [JVM performance monitor](jvm/jvm-performance-monitor.md)
 - [OpenAIMonitor plugin](openai/openai-monitor.md)
 - [LangChainMonitor plugin](langchain/langchain-monitor.md)
+- [DCGMMonitor plugin](dcgm/dcgm-monitor.md)

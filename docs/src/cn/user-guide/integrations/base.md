@@ -5,3 +5,4 @@
 - [JVM 性能监控](jvm/jvm-performance-monitor.md)
 - [OpenAIMonitor 插件](openai/openai-monitor.md)
 - [LangChainMonitor 插件](langchain/langchain-monitor.md)
+- [DCGMMonitor 插件](dcgm/dcgm-monitor.md)

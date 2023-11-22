@@ -25,6 +25,8 @@
   - [JVM performance monitor](user-guide/integrations/jvm/jvm-performance-monitor.md)
   - [OpenAIMonitor plugin](user-guide/integrations/openai/openai-monitor.md)
   - [LangChainMonitor plugin](user-guide/integrations/langchain/langchain-monitor.md)
+  - [DCGMMonitor plugin](user-guide/integrations/dcgm/dcgm-monitor.md)
+
 
 # Dev Guide
 - [Project structure](dev-guide/project-structure.md)
